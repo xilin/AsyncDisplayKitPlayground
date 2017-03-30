@@ -11,8 +11,8 @@
 
 @interface NSAttributedString (Helper)
 
-+ (NSAttributedString *)mt_attributedStringWithContent:(NSString *)content
-                                                  font:(UIFont *)font
-                                                 color:(UIColor *)color;
++ (NSAttributedString *)attributedStringWithContent:(NSString *)content
+                                               font:(UIFont *)font
+                                              color:(UIColor *)color;
 
 @end

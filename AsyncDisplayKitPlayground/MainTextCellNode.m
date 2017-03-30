@@ -21,9 +21,9 @@
   if (self = [super init]) {
     _textNode = [ASTextNode new];
     _textNode.attributedText =
-        [NSAttributedString mt_attributedStringWithContent:content
-                                                      font:nil
-                                                     color:nil];
+        [NSAttributedString attributedStringWithContent:content
+                                                   font:nil
+                                                  color:nil];
     [self addSubnode:_textNode];
   }
   return self;

@@ -17,6 +17,8 @@
 		357284691E8CA7B000F759B4 /* MainTextCellNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 357284681E8CA7B000F759B4 /* MainTextCellNode.m */; };
 		3572846F1E8CADAD00F759B4 /* FlexWrapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3572846E1E8CADAD00F759B4 /* FlexWrapViewController.m */; };
 		357284721E8CAFB800F759B4 /* ASDisplayNode+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 357284711E8CAFB800F759B4 /* ASDisplayNode+Helper.m */; };
+		357284751E8CB60B00F759B4 /* FlexWrapTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 357284741E8CB60B00F759B4 /* FlexWrapTableViewController.m */; };
+		357284781E8CB66200F759B4 /* FlexWrapCellNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 357284771E8CB66200F759B4 /* FlexWrapCellNode.m */; };
 		ED6145AEE780EF4E28835F08 /* libPods-AsyncDisplayKitPlayground.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 64E5FAB912A4F0FC46FA0A66 /* libPods-AsyncDisplayKitPlayground.a */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +42,10 @@
 		3572846E1E8CADAD00F759B4 /* FlexWrapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlexWrapViewController.m; sourceTree = "<group>"; };
 		357284701E8CAFB800F759B4 /* ASDisplayNode+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ASDisplayNode+Helper.h"; sourceTree = "<group>"; };
 		357284711E8CAFB800F759B4 /* ASDisplayNode+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ASDisplayNode+Helper.m"; sourceTree = "<group>"; };
+		357284731E8CB60B00F759B4 /* FlexWrapTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlexWrapTableViewController.h; sourceTree = "<group>"; };
+		357284741E8CB60B00F759B4 /* FlexWrapTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlexWrapTableViewController.m; sourceTree = "<group>"; };
+		357284761E8CB66200F759B4 /* FlexWrapCellNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlexWrapCellNode.h; sourceTree = "<group>"; };
+		357284771E8CB66200F759B4 /* FlexWrapCellNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlexWrapCellNode.m; sourceTree = "<group>"; };
 		64E5FAB912A4F0FC46FA0A66 /* libPods-AsyncDisplayKitPlayground.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AsyncDisplayKitPlayground.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A55BC5841D534545D0CFEAE8 /* Pods-AsyncDisplayKitPlayground.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AsyncDisplayKitPlayground.release.xcconfig"; path = "Pods/Target Support Files/Pods-AsyncDisplayKitPlayground/Pods-AsyncDisplayKitPlayground.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -126,6 +132,10 @@
 			children = (
 				3572846D1E8CADAD00F759B4 /* FlexWrapViewController.h */,
 				3572846E1E8CADAD00F759B4 /* FlexWrapViewController.m */,
+				357284731E8CB60B00F759B4 /* FlexWrapTableViewController.h */,
+				357284741E8CB60B00F759B4 /* FlexWrapTableViewController.m */,
+				357284761E8CB66200F759B4 /* FlexWrapCellNode.h */,
+				357284771E8CB66200F759B4 /* FlexWrapCellNode.m */,
 			);
 			name = flexWrap;
 			sourceTree = "<group>";
@@ -269,6 +279,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				357284781E8CB66200F759B4 /* FlexWrapCellNode.m in Sources */,
+				357284751E8CB60B00F759B4 /* FlexWrapTableViewController.m in Sources */,
 				357284551E8BC5A600F759B4 /* IndexViewController.m in Sources */,
 				357284721E8CAFB800F759B4 /* ASDisplayNode+Helper.m in Sources */,
 				357284661E8CA5D300F759B4 /* NSAttributedString+Helper.m in Sources */,
@@ -342,7 +354,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -384,7 +396,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

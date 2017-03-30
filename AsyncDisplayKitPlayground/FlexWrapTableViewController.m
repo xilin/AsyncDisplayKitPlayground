@@ -1,40 +1,34 @@
 //
-//  ViewController.m
+//  FlexWrapTableViewController.m
 //  AsyncDisplayKitPlayground
 //
-//  Created by LinXi on 29/03/2017.
+//  Created by LinXi on 30/03/2017.
 //  Copyright © 2017 MT. All rights reserved.
 //
 
-#import <AsyncDisplayKit/AsyncDisplayKit.h>
-#import "IndexViewController.h"
-#import "MainTextCellNode.h"
-#import "NSAttributedString+Helper.h"
+#import "FlexWrapCellNode.h"
+#import "FlexWrapTableViewController.h"
 
-@interface IndexViewController ()<ASTableDelegate, ASTableDataSource>
+@interface FlexWrapTableViewController ()<ASTableDelegate, ASTableDataSource>
 
 @property(nonatomic, strong) ASTableNode* tableNode;
-@property(nonatomic, strong) NSArray<NSString*>* modelArray;
 
 @end
 
-@implementation IndexViewController
+@implementation FlexWrapTableViewController
 
 - (instancetype)init {
   if (self = [super init]) {
     _tableNode = [[ASTableNode alloc] initWithStyle:UITableViewStylePlain];
     _tableNode.delegate = self;
     _tableNode.dataSource = self;
-    _modelArray = @[ @"FlexWrap", @"FlexWrapTable" ];
   }
   return self;
 }
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-
-  self.title = @"Index";
-  // Do any additional setup after loading the view, typically from a nib.
+  // Do any additional setup after loading the view.
   [self.view addSubnode:self.tableNode];
 }
 
@@ -56,27 +50,15 @@
 
 - (NSInteger)tableNode:(ASTableNode*)tableNode
  numberOfRowsInSection:(NSInteger)section {
-  return self.modelArray.count;
+  return 1;
 }
 
 - (ASCellNodeBlock)tableView:(ASTableView*)tableView
   nodeBlockForRowAtIndexPath:(NSIndexPath*)indexPath {
-  NSLog(@"%ld", indexPath.row);
-  NSString* model = self.modelArray[indexPath.row];
   return ^{
-    MainTextCellNode* cellNode =
-        [[MainTextCellNode alloc] initWithContent:model];
-
+    FlexWrapCellNode* cellNode = [[FlexWrapCellNode alloc] init];
     return cellNode;
   };
-}
-
-- (void)tableNode:(ASTableNode*)tableNode
-    didSelectRowAtIndexPath:(NSIndexPath*)indexPath {
-  NSString* model = self.modelArray[indexPath.row];
-  ASViewController* vc = [[NSClassFromString(
-      [NSString stringWithFormat:@"%@ViewController", model]) alloc] init];
-  [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end
