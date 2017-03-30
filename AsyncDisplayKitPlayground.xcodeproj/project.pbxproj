@@ -19,6 +19,7 @@
 		357284721E8CAFB800F759B4 /* ASDisplayNode+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 357284711E8CAFB800F759B4 /* ASDisplayNode+Helper.m */; };
 		357284751E8CB60B00F759B4 /* FlexWrapTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 357284741E8CB60B00F759B4 /* FlexWrapTableViewController.m */; };
 		357284781E8CB66200F759B4 /* FlexWrapCellNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 357284771E8CB66200F759B4 /* FlexWrapCellNode.m */; };
+		3572847F1E8CE60A00F759B4 /* FlexWrapChildInsetCellNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 3572847E1E8CE60A00F759B4 /* FlexWrapChildInsetCellNode.m */; };
 		ED6145AEE780EF4E28835F08 /* libPods-AsyncDisplayKitPlayground.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 64E5FAB912A4F0FC46FA0A66 /* libPods-AsyncDisplayKitPlayground.a */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +47,8 @@
 		357284741E8CB60B00F759B4 /* FlexWrapTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlexWrapTableViewController.m; sourceTree = "<group>"; };
 		357284761E8CB66200F759B4 /* FlexWrapCellNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlexWrapCellNode.h; sourceTree = "<group>"; };
 		357284771E8CB66200F759B4 /* FlexWrapCellNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlexWrapCellNode.m; sourceTree = "<group>"; };
+		3572847D1E8CE60A00F759B4 /* FlexWrapChildInsetCellNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlexWrapChildInsetCellNode.h; sourceTree = "<group>"; };
+		3572847E1E8CE60A00F759B4 /* FlexWrapChildInsetCellNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlexWrapChildInsetCellNode.m; sourceTree = "<group>"; };
 		64E5FAB912A4F0FC46FA0A66 /* libPods-AsyncDisplayKitPlayground.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AsyncDisplayKitPlayground.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A55BC5841D534545D0CFEAE8 /* Pods-AsyncDisplayKitPlayground.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AsyncDisplayKitPlayground.release.xcconfig"; path = "Pods/Target Support Files/Pods-AsyncDisplayKitPlayground/Pods-AsyncDisplayKitPlayground.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -136,6 +139,8 @@
 				357284741E8CB60B00F759B4 /* FlexWrapTableViewController.m */,
 				357284761E8CB66200F759B4 /* FlexWrapCellNode.h */,
 				357284771E8CB66200F759B4 /* FlexWrapCellNode.m */,
+				3572847D1E8CE60A00F759B4 /* FlexWrapChildInsetCellNode.h */,
+				3572847E1E8CE60A00F759B4 /* FlexWrapChildInsetCellNode.m */,
 			);
 			name = flexWrap;
 			sourceTree = "<group>";
@@ -284,6 +289,7 @@
 				357284551E8BC5A600F759B4 /* IndexViewController.m in Sources */,
 				357284721E8CAFB800F759B4 /* ASDisplayNode+Helper.m in Sources */,
 				357284661E8CA5D300F759B4 /* NSAttributedString+Helper.m in Sources */,
+				3572847F1E8CE60A00F759B4 /* FlexWrapChildInsetCellNode.m in Sources */,
 				357284521E8BC5A600F759B4 /* AppDelegate.m in Sources */,
 				3572846F1E8CADAD00F759B4 /* FlexWrapViewController.m in Sources */,
 				3572844F1E8BC5A600F759B4 /* main.m in Sources */,

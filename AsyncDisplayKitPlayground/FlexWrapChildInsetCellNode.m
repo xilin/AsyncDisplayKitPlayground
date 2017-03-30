@@ -1,5 +1,5 @@
 //
-//  FlexWrapCellNode.m
+//  FlexWrapChildInsetCellNode.m
 //  AsyncDisplayKitPlayground
 //
 //  Created by LinXi on 30/03/2017.
@@ -7,21 +7,19 @@
 //
 
 #import "ASDisplayNode+Helper.h"
-#import "FlexWrapCellNode.h"
-#import "NSAttributedString+Helper.h"
+#import "FlexWrapChildInsetCellNode.h"
 
-@interface FlexWrapCellNode ()
+@interface FlexWrapChildInsetCellNode ()
 
 @property(nonatomic, strong) NSArray<ASDisplayNode *> *nodeArray;
 @property(nonatomic, assign) CGFloat spacing;
 
 @end
 
-@implementation FlexWrapCellNode
+@implementation FlexWrapChildInsetCellNode
 
-- (instancetype)initWithSpacing:(CGFloat)spacing {
+- (instancetype)init {
   if (self = [super init]) {
-    _spacing = spacing;
 
     CGSize subnodeSize = {70, 70};
     NSArray<ASDisplayNode *> *subnodes = @[
@@ -51,23 +49,26 @@
 }
 
 - (ASLayoutSpec *)layoutSpecThatFits:(ASSizeRange)constrainedSize {
+  NSMutableArray *layout = [NSMutableArray array];
+  [self.nodeArray
+      enumerateObjectsUsingBlock:^(ASDisplayNode *_Nonnull obj, NSUInteger idx,
+                                   BOOL *_Nonnull stop) {
+        ASInsetLayoutSpec *insetSpec = [ASInsetLayoutSpec
+            insetLayoutSpecWithInsets:UIEdgeInsetsMake(10, 20, 10, 20)
+                                child:obj];
+        [layout addObject:insetSpec];
+      }];
+
   ASStackLayoutSpec *stackSpec = [[ASStackLayoutSpec alloc] init];
   stackSpec.direction = ASStackLayoutDirectionHorizontal;
-  stackSpec.children = self.nodeArray;
-  stackSpec.justifyContent = ASStackLayoutJustifyContentStart;
+  stackSpec.children = layout;
+  stackSpec.justifyContent = ASStackLayoutJustifyContentSpaceAround;
   stackSpec.alignItems = ASStackLayoutAlignItemsCenter;
   stackSpec.alignContent = ASStackLayoutAlignContentSpaceAround;
   stackSpec.flexWrap = ASStackLayoutFlexWrapWrap;
   stackSpec.spacing = self.spacing;
-  stackSpec.style.height = ASDimensionMake([self cellHeight]);
 
   return stackSpec;
-}
-
-- (CGFloat)cellHeight {
-  NSInteger rowCount =
-      self.nodeArray.count / 4 + ((self.nodeArray.count % 4) > 0 ? 1 : 0);
-  return rowCount * 80;
 }
 
 @end

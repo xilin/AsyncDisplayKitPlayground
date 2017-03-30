@@ -7,6 +7,7 @@
 //
 
 #import "FlexWrapCellNode.h"
+#import "FlexWrapChildInsetCellNode.h"
 #import "FlexWrapTableViewController.h"
 
 @interface FlexWrapTableViewController () <ASTableDelegate, ASTableDataSource>
@@ -50,16 +51,21 @@
 
 - (NSInteger)tableNode:(ASTableNode *)tableNode
  numberOfRowsInSection:(NSInteger)section {
-  return 2;
+  return 3;
 }
 
 - (ASCellNodeBlock)tableView:(ASTableView *)tableView
   nodeBlockForRowAtIndexPath:(NSIndexPath *)indexPath {
   CGFloat spacing = indexPath.row > 0 ? 30 : 0;
+  BOOL shouldUseInsetCell = indexPath.row > 1;
   return ^{
-    FlexWrapCellNode *cellNode =
-        [[FlexWrapCellNode alloc] initWithSpacing:spacing];
-    return cellNode;
+    if (shouldUseInsetCell) {
+      ASCellNode *cellNode = [FlexWrapChildInsetCellNode new];
+      return cellNode;
+    } else {
+      ASCellNode *cellNode = [[FlexWrapCellNode alloc] initWithSpacing:spacing];
+      return cellNode;
+    }
   };
 }
 
