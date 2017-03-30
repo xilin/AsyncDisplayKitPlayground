@@ -19,6 +19,7 @@
 
 - (instancetype)initWithContent:(NSString *)content {
   if (self = [super init]) {
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
     _textNode = [ASTextNode new];
     _textNode.attributedText =
         [NSAttributedString attributedStringWithContent:content

@@ -67,7 +67,7 @@
 
   topNode.layoutSpecBlock = ^ASLayoutSpec *_Nonnull(
       __kindof ASDisplayNode *_Nonnull node, ASSizeRange constrainedSize) {
-    spec.style.width = ASDimensionMake(constrainedSize.max.width);
+    spec.style.width = ASDimensionMakeWithPoints(constrainedSize.max.width);
     return spec;
   };
   topNode.style.preferredSize = CGSizeMake(300, 300);

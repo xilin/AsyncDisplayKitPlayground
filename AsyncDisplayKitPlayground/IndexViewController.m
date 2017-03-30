@@ -6,15 +6,15 @@
 //  Copyright © 2017 MT. All rights reserved.
 //
 
-#import <AsyncDisplayKit/AsyncDisplayKit.h>
 #import "IndexViewController.h"
 #import "MainTextCellNode.h"
 #import "NSAttributedString+Helper.h"
+#import <AsyncDisplayKit/AsyncDisplayKit.h>
 
-@interface IndexViewController ()<ASTableDelegate, ASTableDataSource>
+@interface IndexViewController () <ASTableDelegate, ASTableDataSource>
 
-@property(nonatomic, strong) ASTableNode* tableNode;
-@property(nonatomic, strong) NSArray<NSString*>* modelArray;
+@property(nonatomic, strong) ASTableNode *tableNode;
+@property(nonatomic, strong) NSArray<NSString *> *modelArray;
 
 @end
 
@@ -36,6 +36,7 @@
   self.title = @"Index";
   // Do any additional setup after loading the view, typically from a nib.
   [self.view addSubnode:self.tableNode];
+  self.tableNode.view.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
 }
 
 - (void)viewWillLayoutSubviews {
@@ -50,31 +51,31 @@
 }
 
 #pragma mark - ASTableNode delegate&datasource
-- (NSInteger)numberOfSectionsInTableNode:(ASTableNode*)tableNode {
+- (NSInteger)numberOfSectionsInTableNode:(ASTableNode *)tableNode {
   return 1;
 }
 
-- (NSInteger)tableNode:(ASTableNode*)tableNode
+- (NSInteger)tableNode:(ASTableNode *)tableNode
  numberOfRowsInSection:(NSInteger)section {
   return self.modelArray.count;
 }
 
-- (ASCellNodeBlock)tableView:(ASTableView*)tableView
-  nodeBlockForRowAtIndexPath:(NSIndexPath*)indexPath {
+- (ASCellNodeBlock)tableView:(ASTableView *)tableView
+  nodeBlockForRowAtIndexPath:(NSIndexPath *)indexPath {
   NSLog(@"%ld", indexPath.row);
-  NSString* model = self.modelArray[indexPath.row];
+  NSString *model = self.modelArray[indexPath.row];
   return ^{
-    MainTextCellNode* cellNode =
+    MainTextCellNode *cellNode =
         [[MainTextCellNode alloc] initWithContent:model];
 
     return cellNode;
   };
 }
 
-- (void)tableNode:(ASTableNode*)tableNode
-    didSelectRowAtIndexPath:(NSIndexPath*)indexPath {
-  NSString* model = self.modelArray[indexPath.row];
-  ASViewController* vc = [[NSClassFromString(
+- (void)tableNode:(ASTableNode *)tableNode
+    didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+  NSString *model = self.modelArray[indexPath.row];
+  ASViewController *vc = [[NSClassFromString(
       [NSString stringWithFormat:@"%@ViewController", model]) alloc] init];
   [self.navigationController pushViewController:vc animated:YES];
 }
