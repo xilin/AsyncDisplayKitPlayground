@@ -34,7 +34,7 @@
 - (void)setupNode {
   ASDisplayNode *topNode = [ASDisplayNode new];
 
-  CGSize subnodeSize = {70, 70};
+  CGSize subnodeSize = {80, 70};
   NSArray<ASDisplayNode *> *subnodes = @[
     [ASDisplayNode nodeWithBackgroundColor:[UIColor redColor] size:subnodeSize],
     [ASDisplayNode nodeWithBackgroundColor:[UIColor blueColor]
@@ -58,7 +58,7 @@
 
   ASStackLayoutSpec *spec = [ASStackLayoutSpec
       stackLayoutSpecWithDirection:ASStackLayoutDirectionHorizontal
-                           spacing:30.f
+                           spacing:0.f
                     justifyContent:ASStackLayoutJustifyContentSpaceAround
                         alignItems:ASStackLayoutAlignItemsCenter
                           flexWrap:ASStackLayoutFlexWrapWrap

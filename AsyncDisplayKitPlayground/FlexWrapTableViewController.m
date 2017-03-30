@@ -9,9 +9,9 @@
 #import "FlexWrapCellNode.h"
 #import "FlexWrapTableViewController.h"
 
-@interface FlexWrapTableViewController ()<ASTableDelegate, ASTableDataSource>
+@interface FlexWrapTableViewController () <ASTableDelegate, ASTableDataSource>
 
-@property(nonatomic, strong) ASTableNode* tableNode;
+@property(nonatomic, strong) ASTableNode *tableNode;
 
 @end
 
@@ -44,19 +44,21 @@
 }
 
 #pragma mark - ASTableNode delegate&datasource
-- (NSInteger)numberOfSectionsInTableNode:(ASTableNode*)tableNode {
+- (NSInteger)numberOfSectionsInTableNode:(ASTableNode *)tableNode {
   return 1;
 }
 
-- (NSInteger)tableNode:(ASTableNode*)tableNode
+- (NSInteger)tableNode:(ASTableNode *)tableNode
  numberOfRowsInSection:(NSInteger)section {
-  return 1;
+  return 2;
 }
 
-- (ASCellNodeBlock)tableView:(ASTableView*)tableView
-  nodeBlockForRowAtIndexPath:(NSIndexPath*)indexPath {
+- (ASCellNodeBlock)tableView:(ASTableView *)tableView
+  nodeBlockForRowAtIndexPath:(NSIndexPath *)indexPath {
+  CGFloat spacing = indexPath.row > 0 ? 30 : 0;
   return ^{
-    FlexWrapCellNode* cellNode = [[FlexWrapCellNode alloc] init];
+    FlexWrapCellNode *cellNode =
+        [[FlexWrapCellNode alloc] initWithSpacing:spacing];
     return cellNode;
   };
 }

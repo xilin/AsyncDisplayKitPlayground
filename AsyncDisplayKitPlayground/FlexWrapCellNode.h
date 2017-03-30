@@ -10,4 +10,6 @@
 
 @interface FlexWrapCellNode : ASCellNode
 
+- (instancetype)initWithSpacing:(CGFloat)spacing;
+
 @end

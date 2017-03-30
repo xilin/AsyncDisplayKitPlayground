@@ -13,13 +13,16 @@
 @interface FlexWrapCellNode ()
 
 @property(nonatomic, strong) NSArray<ASDisplayNode *> *nodeArray;
+@property(nonatomic, assign) CGFloat spacing;
 
 @end
 
 @implementation FlexWrapCellNode
 
-- (instancetype)init {
+- (instancetype)initWithSpacing:(CGFloat)spacing {
   if (self = [super init]) {
+    _spacing = spacing;
+
     CGSize subnodeSize = {70, 70};
     NSArray<ASDisplayNode *> *subnodes = @[
       [ASDisplayNode nodeWithBackgroundColor:[UIColor redColor]
@@ -55,10 +58,16 @@
   stackSpec.alignItems = ASStackLayoutAlignItemsCenter;
   stackSpec.alignContent = ASStackLayoutAlignContentSpaceAround;
   stackSpec.flexWrap = ASStackLayoutFlexWrapWrap;
-  stackSpec.spacing = 50;
-  //    stackSpec.style.height = ASDimensionMake([self cellHeight]);
+  stackSpec.spacing = self.spacing;
+  stackSpec.style.height = ASDimensionMake([self cellHeight]);
 
   return stackSpec;
+}
+
+- (CGFloat)cellHeight {
+  NSInteger rowCount =
+      self.nodeArray.count / 4 + ((self.nodeArray.count % 4) > 0 ? 1 : 0);
+  return rowCount * 80;
 }
 
 @end
